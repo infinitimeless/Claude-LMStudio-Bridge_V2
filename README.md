@@ -32,9 +32,16 @@ This bridge enables Claude to send prompts to locally running models in LM Studi
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
-3. Install the required packages:
+3. Install the required packages (choose one method):
+   
+   Using requirements.txt:
    ```bash
-   pip install anthropic-mcp requests
+   pip install -r requirements.txt
+   ```
+   
+   Or directly install dependencies:
+   ```bash
+   pip install requests "mcp[cli]" openai anthropic-mcp
    ```
 
 ## Usage
@@ -70,11 +77,14 @@ Claude will use the `chat_completion` tool to send the query to your local model
 
 By default, the bridge connects to LM Studio at `http://localhost:1234/v1`. If your LM Studio instance is running on a different port, modify the `LMSTUDIO_API_BASE` variable in `lmstudio_bridge.py`.
 
-## Limitations
+## Troubleshooting
 
-- The bridge currently only supports text completions (no image generation or analysis)
-- Performance depends on your local hardware and the size of the model you're running
-- Some advanced Claude features might not be available in local models
+If you encounter issues with dependencies, try installing them directly:
+```bash
+pip install requests "mcp[cli]" openai anthropic-mcp
+```
+
+For detailed installation instructions and troubleshooting, see the [Installation Guide](docs/installation.md).
 
 ## License
 
