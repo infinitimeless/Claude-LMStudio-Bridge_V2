@@ -35,6 +35,11 @@ Before you begin, make sure you have:
    pip install -r requirements.txt
    ```
 
+   Or install the dependencies directly:
+   ```bash
+   pip install requests "mcp[cli]" openai anthropic-mcp
+   ```
+
 ## Step 3: Start LM Studio Server
 
 1. Open LM Studio
@@ -79,7 +84,11 @@ Before you begin, make sure you have:
 3. **Bridge installation fails**
    - Ensure you have the correct version of Python installed
    - Try updating pip: `pip install --upgrade pip`
-   - Make sure anthropic-mcp is installed correctly
+   - Make sure all dependencies are installed correctly
+   - If you encounter dependency issues, try the direct installation method:
+     ```bash
+     pip install requests "mcp[cli]" openai anthropic-mcp
+     ```
 
 ### Getting Help
 
